@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient( to right, rgb(0,0,0), rgb(65,65,65), rgb(125,125,125), rgb(190,190,190), rgba(17, 2, 36, 0.13), rgb(0,0,0), rgba(17, 2, 36, 0.13), rgb(190,190,190), rgb(125,125,125), rgb(65,65,65), rgb(0,0,0)) ;
+}
+.carousel{
+    width: 100%;
+    position: relative;
+    margin-top: 20vh;
+    margin-left: 40vw;
+}
+.carousel .slide, .slide-hidden{
+    display: none;
+}
+.carousel .slide-visible{
+    display: block;
+    animation: fadeAway 0.5s;
+}
+.carousel .slide img{
+    max-width: 20vw;
+    min-height: 60vh;
+}
+.carousel-button{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    width: 20vw;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+.carousel-button:hover{
+    opacity: 1;
+}
+
+.carousel-button #carousel-button-prev:active,
+.carousel-button #carousel-button-next:active{
+    background-color: rgb(150, 150, 150);
+    color: white;
+}
+.carousel-button button{
+    border-radius: 50%;
+    border: 0;
+    font-weight: bolder;
+    font-size: large;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+.carousel-button #carousel-button-prev{
+    margin-left: 10px;
+}
+.carousel-button #carousel-button-next{
+    margin-right: 10px;
+}
+
+@keyframes fadeAway {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: opacity linear;
+    }
+}
+
+@media screen and (max-width: 750px){
+    body{
+        overflow: hidden;
+    }
+    .carousel{
+        /* max-width: 100%; */
+        position: relative;
+        margin-top: 10vh;
+        margin-left: 15vw;
+    }
+    .carousel .slide img{
+        max-width: 60vw;
+        height: 80vh;
+    }
+    .carousel-button{
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        top: 50%;
+        width: 60vw;
+        transform: translateY(-50%);
+        opacity: -1;
+    }
+}
